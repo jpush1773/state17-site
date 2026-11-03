@@ -11,7 +11,9 @@
       "README.md",
       "CLAUDE.md",
       "package.json",
-      "package-lock.json"
+      "package-lock.json",
+      "ROADMAP.md",
+      ".claude/**"
     ],
     "rewrites": [
       {
