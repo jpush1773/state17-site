@@ -3,6 +3,7 @@ name: Deploy to Firebase
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -18,7 +19,8 @@ jobs:
         run: npm test --prefix functions
       - name: Write service account credentials
         run: echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT }}' > "$RUNNER_TEMP/sa.json"
-      - name: Deploy hosting and functions
+      # TODO: change --only to hosting,functions once the RESEND_API_KEY secret exists in Secret Manager.
+      - name: Deploy hosting
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/sa.json
-        run: npx firebase-tools deploy --only hosting,functions --project "${{ secrets.FIREBASE_PROJECT_ID }}" --non-interactive --force
+        run: npx firebase-tools deploy --only hosting --project "${{ secrets.FIREBASE_PROJECT_ID }}" --non-interactive --force
