@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Public website for State 17 Consulting LLC, a boutique venture architecture firm run by Jim Pushor. Deployed to Cloudflare Pages from `main`. See README.md for setup and DNS.
+Public website for State 17 Consulting LLC, a boutique venture architecture firm run by Jim Pushor. Deployed to Firebase Hosting from `main` by GitHub Actions. See README.md for setup and DNS.
 
 ## Conventions
 
@@ -12,8 +12,8 @@ Public website for State 17 Consulting LLC, a boutique venture architecture firm
 - **Keep structured data in sync with visible copy.** When services, lengths, audiences or FAQ answers change, update the JSON-LD graph in the `<head>` of `index.html` and `llms.txt` to match. The JSON-LD must stay valid JSON.
 - **All canonical URLs are `https://state17consulting.com/`** (apex, trailing slash) in the canonical tag, Open Graph tags, JSON-LD and sitemap.
 - **No analytics or tracking.** No third-party scripts beyond Google Fonts.
-- **Contact form** posts to `/api/contact`, handled by `functions/api/contact.js` (Cloudflare Pages Function, Resend API, key in `RESEND_API_KEY`). Keep the honeypot field `website`.
-- **`/clients/`** is a placeholder. Auth will be Cloudflare Access, configured in the dashboard, not in code.
+- **Contact form** posts to `/api/contact`, which `firebase.json` rewrites to the `contact` Cloud Function in `functions/` (Resend API, key in the Firebase secret `RESEND_API_KEY`). Logic lives in `functions/contact.js` with tests in `functions/contact.test.js`; run `npm test` in `functions/` after changing it. Keep the honeypot field `website`.
+- **`/clients/`** is a placeholder with no auth. Gating is deferred; do not build auth unless asked.
 - New pages copy the style of `thanks.html`: same fonts, top bar and footer.
 
 ## Check before committing

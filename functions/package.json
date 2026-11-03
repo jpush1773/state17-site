@@ -1,0 +1,14 @@
+{
+  "name": "state17-site-functions",
+  "private": true,
+  "description": "Contact form handler for state17consulting.com",
+  "main": "index.js",
+  "type": "module",
+  "engines": { "node": "22" },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "firebase-functions": "^6.0.0"
+  }
+}

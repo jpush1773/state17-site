@@ -1,6 +1,6 @@
 # State 17 Consulting website
 
-The public site for State 17 Consulting LLC, a boutique venture architecture firm run by Jim Pushor. Live at https://state17consulting.com/.
+The public site for State 17 Consulting LLC, a boutique venture architecture firm run by Jim Pushor. Live at https://state17consulting.com/, hosted on Firebase Hosting.
 
 It is a single static HTML page plus a few supporting files. No framework, no build step, no JavaScript-rendered content: everything a visitor, a search engine or an AI answer engine needs is in the HTML source.
 
@@ -8,9 +8,11 @@ It is a single static HTML page plus a few supporting files. No framework, no bu
 |---|---|
 | `index.html` | The landing page: rotating one-word hero, "in plain terms" summary, four audience cards, fee schedule, contact form. Structured data (JSON-LD: ProfessionalService, Person, WebSite, FAQPage) is in the `<head>`. |
 | `thanks.html` | Shown after the contact form is submitted. |
-| `clients/index.html` | Placeholder for the client workspace. To be gated with Cloudflare Access later; there is no auth in this repo. |
-| `404.html` | Not-found page. Cloudflare Pages serves it automatically. |
-| `functions/api/contact.js` | Cloudflare Pages Function that receives the contact form and emails it via Resend. |
+| `clients/index.html` | Placeholder for the client workspace. Not gated yet; there is no auth in this repo. |
+| `404.html` | Not-found page. Firebase Hosting serves it automatically. |
+| `functions/` | Cloud Function for Firebase (`contact`) that receives the contact form and emails it via Resend. `firebase.json` rewrites `/api/contact` to it. |
+| `firebase.json`, `.firebaserc` | Firebase Hosting and Functions config. |
+| `.github/workflows/deploy.yml` | Deploys on every push to `main`. |
 | `robots.txt`, `sitemap.xml`, `llms.txt` | Crawler and answer-engine files. `llms.txt` is a plain-text summary of the firm drawn from the page copy. |
 
 ## Run it locally
@@ -27,10 +29,16 @@ or
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:3000/ (serve) or http://localhost:8000/ (Python). The contact form will not send locally with these servers; it only works on Cloudflare Pages where the Function runs. To test the Function locally, use Wrangler:
+Then open http://localhost:3000/ (serve) or http://localhost:8000/ (Python). The contact form will not send locally with these servers; it only works on Firebase where the function runs. To run the function tests:
 
 ```sh
-npx wrangler pages dev . --binding RESEND_API_KEY=re_xxx
+cd functions && npm install && npm test
+```
+
+To run the whole site with the function locally, use the Firebase emulator (needs `firebase-tools` and a `functions/.secret.local` file containing `RESEND_API_KEY=re_xxx`):
+
+```sh
+firebase emulators:start --only hosting,functions
 ```
 
 ## Editing the page
@@ -47,39 +55,52 @@ npx wrangler pages dev . --binding RESEND_API_KEY=re_xxx
 
 ## Deploys
 
-Every push to `main` deploys to Cloudflare Pages. Pull requests and other branches get preview URLs. There is nothing to build.
+Every push to `main` runs the GitHub Action in `.github/workflows/deploy.yml`, which runs the function tests and deploys Hosting and the Cloud Function to Firebase. There is nothing to build for the site itself.
 
-## One-time setup in Cloudflare
+## One-time setup in Firebase / Google Cloud
 
-Two things to do once in the Cloudflare dashboard:
+Prerequisite: `npm install -g firebase-tools` and `firebase login`.
 
-1. **Create the Pages project.** Workers & Pages → Create → Pages → Connect to Git → pick `jpush1773/state17-site`. Production branch `main`. Framework preset: None. Build command: leave empty. Build output directory: `/`. Save and deploy. Functions in `functions/` are picked up automatically.
-2. **Add the Resend key.** In the Pages project → Settings → Variables and Secrets → add `RESEND_API_KEY` (Production, and Preview if you want previews to send) with the API key from Resend. Mark it as a secret. Redeploy once after adding it.
+1. **Create the Firebase project.** At https://console.firebase.google.com create a project (for example `state17-site`), or add Firebase to an existing Google Cloud project. Google Analytics is not needed; turn it off. Put the project ID in `.firebaserc` if it is not `state17-site`.
+2. **Upgrade to the Blaze plan.** Project settings → Usage and billing → Blaze. Cloud Functions require it. The contact form's traffic will stay inside the free quota, but a billing account has to be attached.
+3. **Enable Hosting** in the console (Build → Hosting → Get started), and once, from the repo root, run `firebase deploy --only hosting --project <project-id>` to confirm it works. The site is live at `<project-id>.web.app`.
+4. **Store the Resend key** as a secret:
 
-For Resend to send from `@state17consulting.com`, the domain must be verified in Resend (Domains → Add domain → add the DKIM and SPF records it gives you at your DNS provider). The Function sends from `website@state17consulting.com` by default; set `CONTACT_FROM` as a second variable to use a different sender.
+   ```sh
+   firebase functions:secrets:set RESEND_API_KEY --project <project-id>
+   ```
 
-Later: to gate `/clients/`, add a Cloudflare Access application for `state17consulting.com/clients/*`. No code change is needed.
+   Optional: `firebase functions:secrets:set CONTACT_FROM` to use a sender other than `website@state17consulting.com` (add `"CONTACT_FROM"` to the `secrets` list in `functions/index.js` if you do).
+5. **Deploy the function once by hand** so the APIs get enabled and permissions prompted: `firebase deploy --only functions --project <project-id>`. Answer yes to enabling Cloud Functions, Cloud Build, Artifact Registry and Secret Manager.
+6. **Wire up GitHub Actions.** Create a service account for deploys:
+
+   ```sh
+   gcloud iam service-accounts create github-deploy --project <project-id>
+   for role in roles/firebasehosting.admin roles/cloudfunctions.developer roles/iam.serviceAccountUser roles/secretmanager.viewer roles/run.viewer roles/artifactregistry.reader; do
+     gcloud projects add-iam-policy-binding <project-id> --member "serviceAccount:github-deploy@<project-id>.iam.gserviceaccount.com" --role "$role"
+   done
+   gcloud iam service-accounts keys create sa.json --iam-account github-deploy@<project-id>.iam.gserviceaccount.com
+   ```
+
+   In the GitHub repo → Settings → Secrets and variables → Actions, add `FIREBASE_SERVICE_ACCOUNT` (the full contents of `sa.json`) and `FIREBASE_PROJECT_ID`. Delete `sa.json` locally afterwards. If a deploy fails on a permission, add the role the error names.
+
+For Resend to send from `@state17consulting.com`, the domain must be verified in Resend (Domains → Add domain → add the DKIM and SPF records it gives you at your DNS provider).
 
 ## DNS at Squarespace Domains
 
-The site needs `state17consulting.com` and `www.state17consulting.com` to point at Cloudflare Pages. The recommended route is to let Cloudflare manage DNS for the domain, because Squarespace Domains does not allow a CNAME on the root (apex) domain, and Pages needs one there.
+Firebase Hosting uses A records, which Squarespace supports at the root domain, so DNS stays at Squarespace.
 
-**Recommended: move DNS to Cloudflare, keep the domain registered at Squarespace.**
+1. In the Firebase console → Hosting → Add custom domain → `state17consulting.com`. Firebase shows a TXT record for verification and one or more A records.
+2. At Squarespace Domains → the domain → DNS → Custom records, add exactly what the console shows. Typically:
 
-1. In Cloudflare: Add a site → `state17consulting.com` → Free plan. Cloudflare scans and imports the existing records (check that the Google Workspace / email MX records came across before continuing). Cloudflare gives you two nameservers, like `ada.ns.cloudflare.com` and `bob.ns.cloudflare.com`.
-2. At Squarespace Domains: open the domain → DNS → Nameservers → Use custom nameservers → enter the two Cloudflare nameservers. Propagation takes up to 24 hours, usually much less.
-3. In Cloudflare Pages: the project → Custom domains → add `state17consulting.com`, then add `www.state17consulting.com`. Cloudflare creates the CNAME records in the zone for you and issues certificates.
-4. Optional: in the Cloudflare zone, Rules → Redirect Rules → redirect `www.state17consulting.com/*` to `https://state17consulting.com/$1` (301) so the canonical URL is the apex.
+   | Type | Host | Value |
+   |---|---|---|
+   | TXT | `@` | `hosting-site=<project-id>` (as shown by Firebase) |
+   | A | `@` | the IP addresses Firebase lists (one record per address) |
 
-**Alternative, if you'd rather leave DNS at Squarespace:** add these records in Squarespace DNS settings, then add both hostnames under Custom domains in the Pages project.
-
-| Type | Host | Value |
-|---|---|---|
-| CNAME | `www` | `state17-site.pages.dev` |
-
-The apex cannot be a CNAME at Squarespace, so the root domain would have to be forwarded to `www` using Squarespace's domain forwarding, and the canonical URL in `index.html`, the JSON-LD and `sitemap.xml` would need to change to `https://www.state17consulting.com/`. That is why the nameserver route is recommended.
-
-Do not remove the existing MX or TXT records for email when changing DNS.
+   Remove any existing Squarespace A records on `@` so the domain stops pointing at Squarespace. Leave MX and other TXT records for email alone.
+3. Back in Firebase, click Verify. Certificate provisioning takes from a few minutes to 24 hours.
+4. Add `www.state17consulting.com` as a second custom domain and choose the option to redirect it to `state17consulting.com`. Firebase will give you A records for the `www` host; add those at Squarespace the same way.
 
 ## Conventions
 

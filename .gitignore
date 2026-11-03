@@ -23,3 +23,5 @@ $RECYCLE.BIN/
 .vscode/
 .idea/
 *.swp
+.secret.local
+functions/.secret.local
