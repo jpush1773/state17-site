@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "state17-site",
     "public": ".",
     "ignore": [
       "firebase.json",
