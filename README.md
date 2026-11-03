@@ -8,7 +8,7 @@ It is a single static HTML page plus a few supporting files. No framework, no bu
 |---|---|
 | `index.html` | The landing page: rotating one-word hero, "in plain terms" summary, four audience cards, fee schedule, contact form. Structured data (JSON-LD: ProfessionalService, Person, WebSite, FAQPage) is in the `<head>`. |
 | `thanks.html` | Shown after the contact form is submitted. |
-| `clients/index.html` | Placeholder for the client workspace. Not gated yet; there is no auth in this repo. |
+| `clients/index.html` | Placeholder for the client workspace. Not linked from any page, not gated, no auth in this repo. |
 | `404.html` | Not-found page. Firebase Hosting serves it automatically. |
 | `functions/` | Cloud Function for Firebase (`contact`) that receives the contact form and emails it via Resend. `firebase.json` rewrites `/api/contact` to it. |
 | `firebase.json`, `.firebaserc` | Firebase Hosting and Functions config. |

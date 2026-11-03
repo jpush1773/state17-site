@@ -25,3 +25,4 @@ $RECYCLE.BIN/
 *.swp
 .secret.local
 functions/.secret.local
+.firebase/

@@ -13,7 +13,7 @@ Public website for State 17 Consulting LLC, a boutique venture architecture firm
 - **All canonical URLs are `https://state17consulting.com/`** (apex, trailing slash) in the canonical tag, Open Graph tags, JSON-LD and sitemap.
 - **No analytics or tracking.** No third-party scripts beyond Google Fonts.
 - **Contact form** posts to `/api/contact`, which `firebase.json` rewrites to the `contact` Cloud Function in `functions/` (Resend API, key in the Firebase secret `RESEND_API_KEY`). Logic lives in `functions/contact.js` with tests in `functions/contact.test.js`; run `npm test` in `functions/` after changing it. Keep the honeypot field `website`.
-- **`/clients/`** is a placeholder with no auth. Gating is deferred; do not build auth unless asked.
+- **`/clients/`** is an unlinked placeholder with no auth. The "Client login" footer link was removed on 2026-11-03; re-add it only when Jim asks. Do not build auth unless asked.
 - New pages copy the style of `thanks.html`: same fonts, top bar and footer.
 
 ## Check before committing
