@@ -76,13 +76,14 @@ Prerequisite: `npm install -g firebase-tools` and `firebase login`.
 
    ```sh
    gcloud iam service-accounts create github-deploy --project <project-id>
-   for role in roles/firebasehosting.admin roles/cloudfunctions.developer roles/iam.serviceAccountUser roles/secretmanager.viewer roles/run.viewer roles/artifactregistry.reader; do
+   for role in roles/firebasehosting.admin roles/cloudfunctions.admin roles/run.admin roles/iam.serviceAccountUser roles/secretmanager.viewer roles/artifactregistry.reader roles/serviceusage.serviceUsageConsumer; do
      gcloud projects add-iam-policy-binding <project-id> --member "serviceAccount:github-deploy@<project-id>.iam.gserviceaccount.com" --role "$role"
    done
+   gcloud secrets add-iam-policy-binding RESEND_API_KEY --project <project-id> --member "serviceAccount:github-deploy@<project-id>.iam.gserviceaccount.com" --role roles/secretmanager.admin
    gcloud iam service-accounts keys create sa.json --iam-account github-deploy@<project-id>.iam.gserviceaccount.com
    ```
 
-   In the GitHub repo → Settings → Secrets and variables → Actions, add `FIREBASE_SERVICE_ACCOUNT` (the full contents of `sa.json`) and `FIREBASE_PROJECT_ID`. Delete `sa.json` locally afterwards. If a deploy fails on a permission, add the role the error names.
+   In the GitHub repo → Settings → Secrets and variables → Actions, add `FIREBASE_SERVICE_ACCOUNT` (the full contents of `sa.json`) and `FIREBASE_PROJECT_ID`. Delete `sa.json` locally afterwards. The secret binding on the last line is needed because the deploy grants the function's runtime account access to the secret. If a deploy fails on a permission, add the role the error names.
 
 For Resend to send from `@state17consulting.com`, the domain must be verified in Resend (Domains → Add domain → add the DKIM and SPF records it gives you at your DNS provider).
 
