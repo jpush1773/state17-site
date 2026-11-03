@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Client workspace · State 17 Consulting</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#FFFFFF; --fg:#1B2420; --muted:#5F6B66; --rule:#E3E8E4; --accent:#1F7A5C; --tint:#F3F8F5;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+/* Light only, on purpose. */
+:root{color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+.wrap{max-width:68rem;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));width:100%}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1{font-family:var(--display);font-stretch:78%;line-height:1.05;text-wrap:balance;margin:0}
+p{margin:0}
+.mono{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.top{border-bottom:1px solid var(--rule)}
+.top .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:1.25rem;padding-block:1.1rem}
+.mark{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:1.5rem;letter-spacing:.01em;text-decoration:none;color:var(--fg)}
+.mark span{color:var(--accent)}
+.tag{font-family:var(--display);font-stretch:85%;font-weight:600;font-size:.95rem;color:var(--muted)}
+.login{color:var(--accent);text-decoration:none}
+.login:hover{text-decoration:underline}
+.legal{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+@media (max-width:640px){.top .wrap{grid-template-columns:auto auto;row-gap:.2rem}.tag{grid-column:1/-1;order:3}}
+.page{background:var(--tint);border-bottom:1px solid var(--rule);display:grid;align-items:center}
+.page .wrap{padding-block:5rem 4rem;display:grid;gap:1.25rem}
+.page h1{font-size:clamp(3rem,9vw,6.5rem);font-weight:800;letter-spacing:-.03em;color:var(--accent);line-height:.95}
+.page .statement{font-size:clamp(1.15rem,2.2vw,1.5rem);max-width:34rem;text-wrap:pretty}
+.page .by{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--muted)}
+.btn{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:1rem;letter-spacing:.02em;text-decoration:none;background:var(--accent);color:#fff;padding:.85rem 1.4rem;display:inline-block;justify-self:start}
+.btn:hover{background:var(--fg);color:#fff}
+footer{border-top:1px solid var(--rule)}
+footer .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--fg)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="/">S<span>17</span></a>
+    <span class="tag">A boutique venture architecture firm</span>
+    <span class="legal">State 17 Consulting LLC <a class="login" href="/clients/" title="Client workspace">· Client login</a></span>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <span class="mono">Client workspace</span>
+    <h1>Coming soon.</h1>
+    <p class="statement">Client workspace coming soon. Memos, models and Decision Review notes will live here, one place for everything from your engagement.</p>
+    <p class="by">Jim Pushor · Founder &amp; Venture Architect</p>
+    <a class="btn" href="/">Back to the site</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">State 17 Consulting LLC</span>
+    <a class="mono" href="mailto:jim@state17consulting.com">jim@state17consulting.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
