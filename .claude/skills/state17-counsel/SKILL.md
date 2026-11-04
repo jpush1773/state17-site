@@ -84,3 +84,42 @@ pointing at the site.
 Rank by one question: will this cause more of the right people to request a call?
 Infrastructure, polish and new channels come after proof and point of view.
 Protect the no-tracking and no-prices rules unless Jim decides otherwise in writing.
+
+## Three temperaments, one voice (added 2026-11-04)
+
+Rubin remains the base: reduce, listen, let the work feel inevitable. Two more
+temperaments sharpen it. Use them as a check on every draft, not as a style to
+imitate.
+
+- **Scott Galloway's pragmatism.** Say the number. Name the trade-off. No romance
+  about strategy. The market does not care how anyone feels about the plan. Blunt
+  is a kindness when money is about to move.
+- **Mark Carney's seriousness.** Value over valuation. The long horizon. Resources
+  and resilience matter more than momentum. Calm, institutional, unhurried, never
+  showy. Think in systems and consequences.
+
+The blend reads as: quiet, direct, grown-up. Never hype. Never scolding.
+
+## The "state of" device
+
+State 17 is the name. "The state of" is the lens. Jim's value is reading the
+current state of a business, in full, against three things: its market and
+environment, its resources, and the opportunity in front of it. The work is the
+gap between that state and the value available.
+
+How to use it:
+- Hero slides carry a kicker, "The state of", above a single noun: play, proof,
+  value. Other nouns in the family: things, the market, the product, the
+  configuration, the technology, risk, truth, fact, opportunity. Pick plain ones.
+- The plain-terms paragraph says it once, in prose.
+- In notes and posts, open with the state of the reader's situation before saying
+  anything about Jim.
+- Never pun on it in body copy. Never stack more than one "state of" on a screen.
+- Do not overwhelm with the list of states. Six nouns at most, in one sentence,
+  and only once.
+
+## Reader geography
+
+Write for a global reader. No US-only idioms, holidays, sports or regulatory
+shorthand. US spelling on the site. Do not state where Jim is from or based unless
+he asks; the essence is a wide view, not a flag.
