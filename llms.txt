@@ -1,6 +1,6 @@
 # State 17 Consulting
 
-> State 17 Consulting LLC is a boutique venture architecture firm founded by Jim Pushor. It helps owners and investors make high-consequence business decisions through short, fixed-scope, fixed-fee engagements.
+> State 17 Consulting is a boutique venture architecture firm founded by Jim Pushor. It helps owners and investors decide where to commit time and capital. Each engagement assesses the business, its market and resources to choose a course, plan the work and test the key assumption. Engagements have a fixed scope, a fixed fee and a clear handover. The firm works with start-ups, turnarounds, new ventures and established industries. It does not provide open-ended implementation or fractional executive roles.
 
 Site: https://state17consulting.com/
 Contact: jim@state17consulting.com
@@ -8,33 +8,33 @@ Founder: Jim Pushor, Founder & Venture Architect. Former manufacturing business 
 
 ## What State 17 does
 
-State 17 helps owners and investors make high-consequence decisions through short, fixed-fee engagements. Each engagement starts with where the business actually stands against its market, its resources and the opportunity in front of it. From there: diagnose the whole business, decide what's worth doing, design how it should work, prove the critical assumption, and hand it off to the client's team.
+State 17 Consulting is a boutique venture architecture firm founded by Jim Pushor. It helps owners and investors decide where to commit time and capital. Each engagement assesses the business, its market and resources to choose a course, plan the work and test the key assumption. Engagements have a fixed scope, a fixed fee and a clear handover. The firm works with start-ups, turnarounds, new ventures and established industries. It does not provide open-ended implementation or fractional executive roles.
 
-A venture architect works across product, operations, finance, data and technology to diagnose a business opportunity as a whole, decide whether it is worth pursuing, and design how it should work in practice: the people, tools, capital, sequence, timeline, risks and proof required. The role integrates disciplines rather than executing within one.
+A venture architect assesses a business opportunity across product, operations, finance and technology, then develops a practical plan for the people, capital and work needed to pursue it.
 
 ## Who State 17 works with
 
-Owners and investors in four situations:
-
-- Start-ups: the pitch was strong but the architecture behind it wasn't. The smart money tests the technical story, not the slides.
-- Turnarounds: product complexity is driving cost. For example, a bill-of-materials problem that was really a product-architecture problem.
-- Concepts: an acquisition, expansion or AI initiative where the answer is not obvious and the numbers alone can't say.
-- Legacy industries: decades of valuable engineering knowledge locked in formats the operation can't search, trust or reuse.
+- Start-ups: test the technical and commercial assumptions before seeking investment.
+- Turnarounds: trace how product complexity affects purchasing, production and cost.
+- New ventures: assess the revenue drivers and risks of an acquisition, expansion or new business.
+- Established industries: make engineering records easier to find, verify and use.
 
 ## Services
 
-Every engagement is fixed scope and fixed fee with a clear end. Fees are quoted after a free twenty-minute introductory call, once the question is clear.
+Every engagement has a fixed scope, a fixed fee and a clear end. Fees are quoted after a free twenty-minute introductory call.
 
-1. Decision Sprint. Answers: should we do this? Tests the assumptions, weighs the evidence and narrows the range to a defensible yes, no or not yet. Two to three weeks. Fixed fee.
-2. Venture Blueprint. Answers: how would this actually work? Economics, operating model, people, tools, capital, sequence and risks in one design the client's team can build from. Three to five weeks. Fixed fee.
-3. Proof Sprint. Answers: can we prove it before we commit? A prototype, pilot or model that tests the critical assumption, with a pass line agreed up front. Three to six weeks. Fixed fee.
+1. Decision Sprint. Assess the evidence and key assumptions. A clear recommendation: proceed, stop or wait. Two to three weeks. Fixed fee, quoted after an introductory call.
 
-Recurring: Decision Review. For past clients. One scheduled session each quarter on the next high-consequence decision, with the diagnostic refreshed on the client's current numbers. A client workspace keeps every memo and model in one place. Quarterly, at a fixed annual fee.
+2. Venture Blueprint. A practical plan covering costs, people, tools, capital, risks and the order of work. Three to five weeks. Fixed fee, quoted after an introductory call.
+
+3. Proof Sprint. A prototype, pilot or model that tests the key assumption against agreed criteria. Three to six weeks. Fixed fee, quoted after an introductory call.
+
+Decision Review: for past clients. A quarterly review of the next major decision, informed by current business results. Fixed annual fee.
 
 ## What State 17 does not do
 
-No open-ended implementation, no fractional COO or embedded operating roles, no retainers or blocks of hours, and no ongoing software maintenance. A new problem is a new engagement.
+No open-ended implementation, fractional executive roles or ongoing software maintenance. Each new problem is a separate engagement.
 
 ## How to get in touch
 
-Request an introductory call through the form at https://state17consulting.com/#contact or email jim@state17consulting.com. Twenty minutes, free.
+Request an introductory call at https://state17consulting.com/#contact or email jim@state17consulting.com. A free twenty-minute call to discuss the decision and whether Jim can help.
