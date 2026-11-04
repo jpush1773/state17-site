@@ -7,13 +7,13 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-<meta name="theme-color" content="#173F38">
+<meta name="theme-color" content="#142B3B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  --bg:#F7F5EF; --fg:#1A2421; --muted:#5B6862; --rule:#DCD8CC; --accent:#173F38; --tint:#EFEBE0;
+  --bg:#F5F1E8; --fg:#142B3B; --muted:#5E6A72; --rule:#DBD4C6; --accent:#142B3B; --accent2:#D8573B; --tint:#EDE8DC;
   --display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --body:"Source Serif 4",Georgia,"Times New Roman",serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -31,10 +31,10 @@ p{margin:0}
 .top{border-bottom:1px solid var(--rule)}
 .top .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.25rem;padding-block:1rem}
 .mark{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--accent)}
-.mark img{height:1.35rem;width:auto;display:block}
-.mark .name{display:grid;line-height:1.05;font-family:var(--display);font-stretch:92%;text-transform:uppercase}
-.mark .name b{font-weight:600;font-size:.98rem;letter-spacing:.16em}
-.mark .name small{font-weight:500;font-size:.58rem;letter-spacing:.24em;color:var(--muted)}
+.mark img{height:1.55rem;width:auto;display:block}
+.mark .name{display:grid;line-height:1;font-family:var(--display);font-stretch:90%;text-transform:uppercase}
+.mark .name b{font-weight:800;font-size:1.12rem;letter-spacing:-.005em}
+.mark .name small{font-weight:600;font-size:.56rem;letter-spacing:.34em;color:var(--fg);margin-top:.12rem}
 .tag{font-family:var(--display);font-stretch:85%;font-weight:600;font-size:.95rem;color:var(--muted)}
 .legal{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
 @media (max-width:640px){.top .wrap{grid-template-columns:1fr;row-gap:.35rem}.top .legal{display:none}}
@@ -44,7 +44,7 @@ p{margin:0}
 .page .statement{font-size:clamp(1.15rem,2.2vw,1.5rem);max-width:34rem;text-wrap:pretty}
 .page .by{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--muted)}
 .btn{font-family:var(--display);font-stretch:85%;font-weight:700;font-size:1rem;letter-spacing:.02em;text-decoration:none;background:var(--accent);color:var(--bg);padding:.85rem 1.4rem;display:inline-block;justify-self:start}
-.btn:hover{background:var(--fg);color:var(--bg)}
+.btn:hover{background:var(--accent2);color:var(--bg)}
 footer{border-top:1px solid var(--rule)}
 footer .wrap{padding-block:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem}
 footer a{color:var(--muted);text-decoration:none}
@@ -55,7 +55,7 @@ footer a:hover{color:var(--fg)}
 
 <header class="top">
   <div class="wrap">
-    <a class="mark" href="/" aria-label="State 17 Consulting, home"><img src="/assets/s17-mark.svg" alt="" width="160" height="69"><span class="name" aria-hidden="true"><b>State 17</b><small>Consulting</small></span></a>
+    <a class="mark" href="/" aria-label="State 17 Consulting, home"><img src="/assets/s17-mark.svg" alt="" width="160" height="69"><span class="name" aria-hidden="true"><b>State17</b><small>Consulting</small></span></a>
     <span class="tag">A boutique venture architecture firm</span>
     <span class="legal">State 17 Consulting LLC</span>
   </div>
