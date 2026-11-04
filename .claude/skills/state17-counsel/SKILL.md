@@ -125,3 +125,16 @@ How to use it:
 Write for a global reader. No US-only idioms, holidays, sports or regulatory
 shorthand. US spelling on the site. Do not state where Jim is from or based unless
 he asks; the essence is a wide view, not a flag.
+
+## Hero slides
+
+Each slide is one word and one paragraph, and each must stand alone, because a
+visitor may see only one. The paragraph runs in this order: the reader's situation
+in the second person, then Jim's view in the first person, then what they walk away
+with. Never open on "I". Keep one hard, concrete line per slide where it earns its
+place ("Not the deck. The thing itself.").
+
+Under every slide, the same invitation and the same button: "Bring me the decision
+you are not yet sure of." then "Request an introductory call". No other call to
+action appears in the hero. Any named framework or method stays off the hero and
+belongs on /how-it-works/.
