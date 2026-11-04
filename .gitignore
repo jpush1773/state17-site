@@ -26,3 +26,6 @@ $RECYCLE.BIN/
 .secret.local
 functions/.secret.local
 .firebase/
+
+# Brand explorations: local only until an identity is final (see brand/README.md)
+brand/

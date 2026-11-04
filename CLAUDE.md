@@ -15,6 +15,7 @@ Public website for State 17 Consulting LLC, a boutique venture architecture firm
 - **Contact form** posts to `/api/contact`, which `firebase.json` rewrites to the `contact` Cloud Function in `functions/` (Resend API, key in the Firebase secret `RESEND_API_KEY`). Logic lives in `functions/contact.js` with tests in `functions/contact.test.js`; run `npm test` in `functions/` after changing it. Keep the honeypot field `website`.
 - **`/clients/`** is an unlinked placeholder with no auth. The "Client login" footer link was removed on 2026-11-03; re-add it only when Jim asks. Do not build auth unless asked.
 - New pages copy the style of `thanks.html`: same fonts, top bar and footer.
+- **`brand/`** holds logo and type explorations, local only (gitignored, not served). `brand/README.md` indexes them. They are AI raster concepts: never put them on the site, and do not change the live colours or fonts until Jim picks a direction.
 
 ## Check before committing
 

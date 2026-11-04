@@ -70,6 +70,8 @@ The unglamorous things that make everything after this countable and trustworthy
       mail both stay deliverable. **Jim** adds it. Never touch MX or SPF.
 - [ ] Favicon set and a real Open Graph image (1200×630) so links look right on
       LinkedIn and in iMessage. Plain: wordmark on the light background.
+      **Jim** picks a direction from the four studies in `brand/` first (see
+      `brand/README.md`). Until then, use the current S17 type mark.
 - [ ] Thanks page offers a scheduling link so a visitor can book the twenty minutes
       directly. Google Calendar appointment schedule (included in Workspace).
       **Jim** creates the schedule and sends the link.

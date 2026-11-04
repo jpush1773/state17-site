@@ -13,7 +13,8 @@
       "package.json",
       "package-lock.json",
       "ROADMAP.md",
-      ".claude/**"
+      ".claude/**",
+      "brand/**"
     ],
     "rewrites": [
       {
