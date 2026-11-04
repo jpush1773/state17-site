@@ -8,7 +8,7 @@ Founder: Jim Pushor, Founder & Venture Architect. Former manufacturing business 
 
 ## What State 17 does
 
-State 17 helps owners and investors make high-consequence decisions through short, fixed-fee engagements. Each engagement starts with the state of things: where the business actually stands against its market, its resources and the opportunity in front of it. From there: diagnose the whole business, decide what's worth doing, design how it should work, prove the critical assumption, and hand it off to the client's team.
+State 17 helps owners and investors make high-consequence decisions through short, fixed-fee engagements. Each engagement starts with where the business actually stands against its market, its resources and the opportunity in front of it. From there: diagnose the whole business, decide what's worth doing, design how it should work, prove the critical assumption, and hand it off to the client's team.
 
 A venture architect works across product, operations, finance, data and technology to diagnose a business opportunity as a whole, decide whether it is worth pursuing, and design how it should work in practice: the people, tools, capital, sequence, timeline, risks and proof required. The role integrates disciplines rather than executing within one.
 

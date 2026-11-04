@@ -108,13 +108,15 @@ environment, its resources, and the opportunity in front of it. The work is the
 gap between that state and the value available.
 
 How to use it:
-- Hero slides carry a kicker, "The state of", above a single noun: play, proof,
-  value. Other nouns in the family: things, the market, the product, the
-  configuration, the technology, risk, truth, fact, opportunity. Pick plain ones.
-- The plain-terms paragraph says it once, in prose.
+- The phrase itself stays off the page (Jim, 2026-11-04). The lens shows in what
+  the words do, not in a label. Hero slides are single nouns from Jim's list:
+  Discovery, Demand, Risk, Focus. Also available: Trend, Truth, Fact, Opportunity,
+  Clarity. Never "Play".
+- The plain-terms paragraph carries the idea once, in other words: where the
+  business actually stands against its market, its resources and the opportunity.
 - In notes and posts, open with the state of the reader's situation before saying
   anything about Jim.
-- Never pun on it in body copy. Never stack more than one "state of" on a screen.
+- Never pun on the name in body copy.
 - Do not overwhelm with the list of states. Six nouns at most, in one sentence,
   and only once.
 
