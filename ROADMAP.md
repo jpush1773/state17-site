@@ -68,10 +68,9 @@ The unglamorous things that make everything after this countable and trustworthy
       the sitemap. **Jim** adds the TXT records at Squarespace.
 - [ ] DMARC record (`p=none` with a reporting address) so Resend and Microsoft 365
       mail both stay deliverable. **Jim** adds it. Never touch MX or SPF.
-- [ ] Favicon set and a real Open Graph image (1200×630) so links look right on
-      LinkedIn and in iMessage. Plain: wordmark on the light background.
-      **Jim** picks a direction from the four studies in `brand/` first (see
-      `brand/README.md`). Until then, use the current S17 type mark.
+- [x] Favicon set and a real Open Graph image (1200×630) so links look right on
+      LinkedIn and in iMessage. Shipped 2026-11-04 with identity study 01
+      (`assets/favicon.svg`, `assets/apple-touch-icon.png`, `assets/og.png`).
 - [ ] Thanks page offers a scheduling link so a visitor can book the twenty minutes
       directly. Google Calendar appointment schedule (included in Workspace).
       **Jim** creates the schedule and sends the link.

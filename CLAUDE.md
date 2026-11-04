@@ -5,7 +5,7 @@ Public website for State 17 Consulting LLC, a boutique venture architecture firm
 ## Conventions
 
 - **Static HTML only.** No framework, no build step, no bundler, no JavaScript-rendered content. All text must be in the HTML source so search engines and AI answer engines can read it. The only JS is the hero rotation in `index.html`.
-- **Light theme only.** `color-scheme: light` is deliberate. Do not add a dark mode. Accent is `#1F7A5C`.
+- **Light theme only.** `color-scheme: light` is deliberate. Do not add a dark mode. Palette (identity study 01, adopted 2026-11-04): navy `#142B3B` for text, headings and buttons, vermilion `#D8573B` as the second accent (the 17 mark, dots, hover states, small rules), ivory `#F5F1E8` background with `#EDE8DC` tint panels.
 - **No prices on the page.** Every service is "Fixed fee" or "Fixed annual fee", quoted after the introductory call. Never add dollar figures.
 - **No invented testimonials or client names.** The cards carry no quotes until Jim supplies real ones with written permission (removed 2026-11-03). Do not fabricate quotes, names, companies or results.
 - **Single H1.** The first hero slide holds the only `<h1>`; other slides use `<p class="h1">`.
@@ -15,7 +15,7 @@ Public website for State 17 Consulting LLC, a boutique venture architecture firm
 - **Contact form** posts to `/api/contact`, which `firebase.json` rewrites to the `contact` Cloud Function in `functions/` (Resend API, key in the Firebase secret `RESEND_API_KEY`). Logic lives in `functions/contact.js` with tests in `functions/contact.test.js`; run `npm test` in `functions/` after changing it. Keep the honeypot field `website`.
 - **`/clients/`** is an unlinked placeholder with no auth. The "Client login" footer link was removed on 2026-11-03; re-add it only when Jim asks. Do not build auth unless asked.
 - New pages copy the style of `thanks.html`: same fonts, top bar and footer.
-- **`brand/`** holds logo and type explorations, local only (gitignored, not served). `brand/README.md` indexes them. They are AI raster concepts: never put them on the site, and do not change the live colours or fonts until Jim picks a direction.
+- **`brand/`** holds logo and type explorations, local only (gitignored, not served). `brand/README.md` indexes them. They are AI raster concepts: never put the rasters on the site. Study 01 was chosen on 2026-11-04 and its vector mark, favicon, OG image and founder photo live in `assets/`; keep those in sync if the identity changes.
 
 ## Check before committing
 
